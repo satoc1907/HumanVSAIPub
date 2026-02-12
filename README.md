@@ -14,8 +14,8 @@ This application is designed to help medical professionals and researchers train
 
 The project consists of two Electron applications:
 
-1. **viteElectronTCGAtest**: For testing identification skills
-2. **viteElectronTCGAtrain**: For training and practice
+1. **Testapp**: For testing identification skills
+2. **Trainapp**: For training and practice
 
 Each application displays brain MRI scans in four different modalities (T1, T1CE, T2, FLAIR) and asks users to identify the IDH mutation status of the tumor.
 
@@ -52,11 +52,11 @@ Each application displays brain MRI scans in four different modalities (T1, T1CE
 2. Install dependencies for both applications:
    ```
    # For the test application
-   cd viteElectronTCGAtest
+   cd Testapp
    npm install
    
    # For the training application
-   cd ../viteElectronTCGAtrain
+   cd ../Trainapp
    npm install
    ```
 
@@ -69,7 +69,7 @@ Each application displays brain MRI scans in four different modalities (T1, T1CE
 For each application, you'll need to place your data in the following directory structure:
 
 ```
-/viteElectronTCGAtest/src/renderer/data/
+/Testapp/src/renderer/data/
 └── [Case ID]/
     ├── T1.nii.gz
     ├── T1CE.nii.gz
@@ -80,7 +80,7 @@ For each application, you'll need to place your data in the following directory 
 And similarly for the training application:
 
 ```
-/viteElectronTCGAtrain/src/renderer/data/
+/Trainapp/src/renderer/data/
 └── [Case ID]/
     ├── T1.nii.gz
     ├── T1CE.nii.gz
@@ -107,8 +107,8 @@ You'll also need to create a JSON file with metadata for each case. The format s
 - `IDH1_2`: Ground truth IDH mutation status (0 = wild type, 1 = mutated)
 
 **Important Note**: The JSON files MUST be named exactly as follows:
-- Test application: `/viteElectronTCGAtest/src/renderer/data/jsons/TCGA_test_sampled_random0.json`
-- Training application: `/viteElectronTCGAtrain/src/renderer/data/jsons/TCGA_train_sampled_random0.json`
+- Test application: `/Testapp/src/renderer/data/jsons/TCGA_test_sampled_random0.json`
+- Training application: `/Trainapp/src/renderer/data/jsons/TCGA_train_sampled_random0.json`
 
 The applications are hardcoded to look for these specific filenames. Using different filenames will result in the applications not being able to load the case data.
 
@@ -118,13 +118,13 @@ The applications are hardcoded to look for these specific filenames. Using diffe
 
 To run the test application:
 ```
-cd viteElectronTCGAtest
+cd Testapp
 npm run dev
 ```
 
 To run the training application:
 ```
-cd viteElectronTCGAtrain
+cd Trainapp
 npm run dev
 ```
 
@@ -132,13 +132,13 @@ npm run dev
 
 To build the test application:
 ```
-cd viteElectronTCGAtest
+cd Testapp
 npm run build
 ```
 
 To build the training application:
 ```
-cd viteElectronTCGAtrain
+cd Trainapp
 npm run build
 ```
 

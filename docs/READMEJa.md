@@ -12,8 +12,8 @@ This application is designed to help medical professionals and researchers train
 
 プロジェクトは2つのElectronアプリケーションで構成されています：
 
-1. **viteElectronTCGAtest**: 識別スキルのテスト用
-2. **viteElectronTCGAtrain**: トレーニングと練習用
+1. **Testapp**: 識別スキルのテスト用
+2. **Trainapp**: トレーニングと練習用
 
 各アプリケーションは4つの異なるモダリティ（T1、T1CE、T2、FLAIR）で脳MRIスキャンを表示し、ユーザーに腫瘍のIDH変異状態を識別するよう求めます。
 
@@ -50,11 +50,11 @@ This application is designed to help medical professionals and researchers train
 2. 両方のアプリケーションの依存関係をインストール:
    ```
    # テストアプリケーション用
-   cd viteElectronTCGAtest
+   cd Testapp
    npm install
    
    # トレーニングアプリケーション用
-   cd ../viteElectronTCGAtrain
+   cd ../Trainapp
    npm install
    ```
 
@@ -67,7 +67,7 @@ This application is designed to help medical professionals and researchers train
 各アプリケーションで、以下のディレクトリ構造にデータを配置する必要があります:
 
 ```
-/viteElectronTCGAtest/src/renderer/data/
+/Testapp/src/renderer/data/
 └── [Case ID]/
     ├── T1.nii.gz
     ├── T1CE.nii.gz
@@ -78,7 +78,7 @@ This application is designed to help medical professionals and researchers train
 同様に、トレーニングアプリケーション用:
 
 ```
-/viteElectronTCGAtrain/src/renderer/data/
+/Trainapp/src/renderer/data/
 └── [Case ID]/
     ├── T1.nii.gz
     ├── T1CE.nii.gz
@@ -105,8 +105,8 @@ This application is designed to help medical professionals and researchers train
 - `IDH1_2`: 正解のIDH変異状態 (0 = 野生型, 1 = 変異型)
 
 このファイルを以下の場所に保存します:
-- `/viteElectronTCGAtest/src/renderer/data/jsons/TCGA_test_sampled_random0.json`
-- `/viteElectronTCGAtrain/src/renderer/data/jsons/TCGA_train_sampled_random0.json`
+- `/Testapp/src/renderer/data/jsons/TCGA_test_sampled_random0.json`
+- `/Trainapp/src/renderer/data/jsons/TCGA_train_sampled_random0.json`
 
 ## 使用方法 (Usage)
 
@@ -114,13 +114,13 @@ This application is designed to help medical professionals and researchers train
 
 テストアプリケーションを実行:
 ```
-cd viteElectronTCGAtest
+cd Testapp
 npm run dev
 ```
 
 トレーニングアプリケーションを実行:
 ```
-cd viteElectronTCGAtrain
+cd Trainapp
 npm run dev
 ```
 
@@ -128,13 +128,13 @@ npm run dev
 
 テストアプリケーションをビルド:
 ```
-cd viteElectronTCGAtest
+cd Testapp
 npm run build
 ```
 
 トレーニングアプリケーションをビルド:
 ```
-cd viteElectronTCGAtrain
+cd Trainapp
 npm run build
 ```
 
