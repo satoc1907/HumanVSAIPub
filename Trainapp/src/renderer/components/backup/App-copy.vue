@@ -1,6 +1,5 @@
 
 <template>
-  <img src="./assets/winml-graphic.png"  height="300" width="800" alt="AI Head">
   <SkNiiVueVue v-bind:quiz="quiz"  v-bind:questionIndex="questionIndex"/>
   <SkeltonQuiz v-model:quiz="quiz" v-model:quizText="
   quizText" v-model:questionIndex="questionIndex" v-model:userResponses="userResponses" @IndexNext='increase' @RestartIndex='Restart' @Prev='decrease'/>
